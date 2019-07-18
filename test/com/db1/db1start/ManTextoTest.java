@@ -18,5 +18,12 @@ public class ManTextoTest {
 		String lower = manTexto.lower("TESTE");
 		Assert.assertEquals("teste", lower);
 	}
+	
+	@Test
+	public void deveContarLetras() {
+		ManTexto manTexto = new ManTexto();
+		int letras = manTexto.contaLetras("DB1START");
+		Assert.assertEquals(7, letras);
+	}
 
 }
