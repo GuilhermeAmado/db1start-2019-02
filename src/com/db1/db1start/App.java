@@ -23,6 +23,12 @@ public class App {
 		
 		Double menor3 = Matematica.menorTres(8.5, 7.3, 2.5);
 		System.out.println("O menor entre os três números foi: " + menor3);
+		
+		// método de instancia objeto (comportamentos ao objeto)
+		CalculadoraSimples calculadora = new CalculadoraSimples();
+		System.out.println(calculadora.somar(10,  15));
+		System.out.println(calculadora.subtrair(25,  15));
+		
 	} 
 
 }
