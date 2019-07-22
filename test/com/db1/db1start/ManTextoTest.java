@@ -60,5 +60,25 @@ public class ManTextoTest {
 		String nome = manTexto.substituiPrimeiroNome("Guilherme Amado");
 		Assert.assertEquals("ALUNO Amado", nome);
 	}
-		
+
+	@Test
+	public void deveTransformarTextoEmArray() {
+		ManTexto manTexto = new ManTexto();
+		String[] frutas = manTexto.separaPalavras("banana, maçã, melancia");
+		Assert.assertEquals("banana", frutas[0]);
+		Assert.assertEquals("maçã", frutas[1]);
+		Assert.assertEquals("melancia", frutas[2]);
+	}
+	
+	@Test public void deveContarVogais() {
+		ManTexto manTexto = new ManTexto();
+		int contagemVogais = manTexto.contadorDeVogais("DB1Start");
+		Assert.assertEquals(1, contagemVogais);
+	}
+	
+	@Test public void deveInverterTexto() {
+		ManTexto manTexto = new ManTexto();
+		String invertido = manTexto.inversorDeTexto("teste123");
+		Assert.assertEquals("321etset", invertido);
+	}
 }

@@ -70,5 +70,30 @@ public class ManTexto {
 		return alunoNome;
 	}
 	
+	// Método que recebe o seguinte texto "banana, maçã, melancia" e exibe o texto separadamente
+	public String[] separaPalavras(String frutas) {
+		frutas = frutas.replaceAll("\\s", "");	// remove espaços em branco
+		String[] separado = frutas.split(",");
+		return separado;
+	}
 	
+	// Método que recebe um texto e exibe quantas vogais tem no texto
+	public int contadorDeVogais(String texto) {
+		int vogais= 0;
+		for (int i = 0; i < texto.length(); i++)
+        {
+            if (texto.charAt(i) == 'a' || texto.charAt(i) == 'e' || texto.charAt(i) == 'i'
+                    || texto.charAt(i) == 'o' || texto.charAt(i) == 'u')
+            {
+                vogais++;
+            }
+        }
+        return vogais;
+	}
+	
+	// Método que recebe um texto e devolve ele invertido
+	public String inversorDeTexto(String texto) {
+		String invertido = new StringBuffer(texto).reverse().toString();
+		return invertido;
+	}
 }
