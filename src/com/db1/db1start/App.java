@@ -1,34 +1,69 @@
 package com.db1.db1start;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 	
 	public static void main(String[] args) {
-		int tamanhoDoNome = Nome.quantidadeDeCaractes("Guilherme Amado");
-		System.out.println("Tamanho do nome: " + tamanhoDoNome);
+		List<String> nomes = new ArrayList<String>();
 		
-		int soma = Inteiro.somaDois(2, 2);
-		System.out.println("A soma dos dois números é: " + soma);
+		nomes.add("Maiko Cunha");
+		nomes.add("Maiko Cunha");
+		nomes.add("João");
+		nomes.add("Maria");
 		
-		int subtracao = Inteiro.subtraiDois(5, 2);
-		System.out.println("A subtração dos dois números é: " + subtracao);
+		System.out.println(nomes);
 		
-		String textoUpper = Texto.upper("este texto foi digitado em lowercase");
-		System.out.println(textoUpper);
+		nomes.removeIf(banana -> banana.equals("Maiko Cunha"));		// lambda
 		
-		String textoLower = Texto.lower("este texto foi digitado em uppercase");
-		System.out.println(textoLower);
+		System.out.println(nomes);
 		
-		Double menor2 = Matematica.menorDois(8.5, 7.3);
-		System.out.println("O menor entre os dois números foi: " + menor2);
+		nomes.add("Fernando");
 		
-		Double menor3 = Matematica.menorTres(8.5, 7.3, 2.5);
-		System.out.println("O menor entre os três números foi: " + menor3);
+		System.out.println(nomes);
 		
-		// método de instancia objeto (comportamentos ao objeto)
-		CalculadoraSimples calculadora = new CalculadoraSimples();
-		System.out.println(calculadora.somar(10,  15));
-		System.out.println(calculadora.subtrair(25,  15));
+		for (String nome : nomes) {
+			System.out.println(nome);
+		}
 		
+		nomes.add(2, "João Felipe");
+		
+		System.out.println(nomes);
+		
+		List<Integer> numeros = new ArrayList<>();
+		
+		numeros.add(2);
+		numeros.add(3);
+		
+		System.out.println(numeros);
+		
+		List<List<String>> todosOsNomes = new ArrayList<>();
+		
+		List<String> nomesComLetraA = new ArrayList<>();
+		
+		nomesComLetraA.add("Ana");
+		
+		todosOsNomes.add(nomes);
+		todosOsNomes.add(nomesComLetraA);
+		
+		System.out.println(todosOsNomes);
+		
+		
+		List<Pessoa> pessoas = new ArrayList<>();
+		
+		pessoas.add(new Pessoa("Maiko Cunha"));
+		
+		for (Pessoa pessoa : pessoas) {				// percorre a lista
+			System.out.println(pessoa.getNome());
+		}
+		
+		
+		if (pessoas.size() == 0) {
+			System.out.println("Lista vazia");
+		} else {
+			System.out.println("Lista com valores: " + pessoas.size());
+		}
 	} 
 
 }
