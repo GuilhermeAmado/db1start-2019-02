@@ -25,5 +25,40 @@ public class ManTextoTest {
 		int letras = manTexto.contaLetras("DB1START");
 		Assert.assertEquals(7, letras);
 	}
-
+	
+	@Test
+	public void deveRemoverEspacosEContarLetras() {
+		ManTexto manTexto = new ManTexto();
+		int letras = manTexto.contaLetras(" DB1START ");
+		Assert.assertEquals(7, letras);
+	}
+	
+	@Test
+	public void deveAbreviarNome4Letras() {
+		ManTexto manTexto = new ManTexto();
+		String nome = manTexto.abreviaNome("Guilherme Amado");
+		Assert.assertEquals("Guil", nome);
+	}
+	
+	@Test
+	public void deveCortarDuasPrimeirasLetras() {
+		ManTexto manTexto = new ManTexto();
+		String nome = manTexto.nomeSemInicio("Guilherme Amado");
+		Assert.assertEquals("ilherme Amado", nome);
+	}
+	
+	@Test
+	public void deveMostrar4UltimasLetras() {
+		ManTexto manTexto = new ManTexto();
+		String nome = manTexto.quatroUltimasLetras("Guilherme Amado");
+		Assert.assertEquals("mado", nome);
+	}
+	
+	@Test
+	public void deveSubstituirPrimeiroNome() {
+		ManTexto manTexto = new ManTexto();
+		String nome = manTexto.substituiPrimeiroNome("Guilherme Amado");
+		Assert.assertEquals("ALUNO Amado", nome);
+	}
+		
 }

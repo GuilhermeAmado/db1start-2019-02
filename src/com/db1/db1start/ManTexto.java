@@ -31,5 +31,44 @@ public class ManTexto {
 	    }
 		return letras;
 	}
-
+	
+	// Método que recebe " DB1START " (tendo um espaço no inicio e no fim da palavra) e retorna a quantidade de letras que existe
+	// Método que retorna o item 4 com a mesma quantidade de letras do item 3
+	public Integer removeEspacoContaLetras(String palavra) {
+		int letras = 0;
+		palavra = palavra.replaceAll("\\s", "");	// remove espaços em branco - poderia se usar o método strip também
+		for (int i = 0; i < palavra.length(); i++) {
+			if (Character.isLetter(palavra.charAt(i)))
+				letras++;
+	    }
+		return letras;
+	}
+	
+	// Método que recebe o meu nome completo e exibe somente as 4 primeiras letras do nome
+	public String abreviaNome(String nome) {
+		String nomeAbreviado = nome.substring(0, 4);
+		return nomeAbreviado;
+	}
+	
+	// Método que recebe o meu nome completo e exibe a partir da terceira letra do nome
+	public String nomeSemInicio(String nome) {
+		String nomeStrip = nome.substring(2);
+		return nomeStrip;
+	}
+	
+	// Método que recebe o meu nome completo e exibe somente as 4 ultimas letras
+	public String quatroUltimasLetras(String nome) {
+		String finalNome = nome.substring(nome.length() - 4);
+		return finalNome;
+	}
+	
+	// Método que recebe o meu nome completo e substitui o primeiro nome por ALUNO
+	public String substituiPrimeiroNome(String nome) {
+		String[] nomeCompleto = nome.split("\\s");	// divide a string onde tem espaços
+		String aluno = "ALUNO ";
+		String alunoNome = aluno.concat(nomeCompleto[1]);
+		return alunoNome;
+	}
+	
+	
 }
