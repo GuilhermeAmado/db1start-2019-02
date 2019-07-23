@@ -38,7 +38,8 @@ public class ExListasTest {
 	@Test
 	public void deveOrdenarMinhasCoresFavoritas() {
 		ExListas exListas = new ExListas();
-		List<String> coresOrdenadas = exListas.ordenaArrayList();
+		List<String> cores = exListas.minhasCores();
+		List<String> coresOrdenadas = exListas.ordenaArrayList(cores);
 		Assert.assertEquals("Azul", coresOrdenadas.get(0));
 		Assert.assertEquals("Preto", coresOrdenadas.get(1));
 		Assert.assertEquals("Verde", coresOrdenadas.get(2));
@@ -57,10 +58,16 @@ public class ExListasTest {
 	@Test
 	public void deveOrdenarInvertidoMinhasCoresFavoritas() {
 		ExListas exListas = new ExListas();
-		List<String> coresOrdemInversa = exListas.inverteArrayList();
+		List<String> cores = exListas.minhasCores();
+		List<String> coresOrdemInversa = exListas.inverteArrayList(cores);
 		Assert.assertEquals("Verde", coresOrdemInversa.get(0));
 		Assert.assertEquals("Preto", coresOrdemInversa.get(1));
 		Assert.assertEquals("Azul", coresOrdemInversa.get(2));
+	}
+	
+	@Test // teste da lista dentro da lista
+	public void deveRetornarListaDentroLista() {
+		
 	}
 	
 	@Test
@@ -70,6 +77,42 @@ public class ExListasTest {
 		int soma = exListas.somaLista(listaNum);
 		Assert.assertEquals(15, soma);
 	}
+	
+	@Test
+	public void deveSomarNumerosEmUmaListaDouble() {
+		ExListas exListas = new ExListas();
+		List<Double> listaNumDouble = exListas.meusNumerosDouble();
+		Double somaDouble = exListas.somaListaDouble(listaNumDouble);
+		Assert.assertEquals(9.1, somaDouble, 0.001);
+	}
+	
+	@Test
+	public void deveRetornarMenorIntEmUmaLista() {
+		ExListas exListas = new ExListas();
+		List<Integer> numeros = exListas.meusNumeros();
+		int menor = exListas.retornaMenorValorEmUmaLista(numeros);
+		Assert.assertEquals(1, menor);
+	}
+	
+	@Test
+	public void deveRetornarMaiorIntEmUmaLista() {
+		ExListas exListas = new ExListas();
+		List<Integer> numeros = exListas.meusNumeros();
+		int maior = exListas.retornaMaiorValorEmUmaLista(numeros);
+		Assert.assertEquals(5, maior);
+	}
+	
+	@Test
+	public void deveRemoverNumerosImpares() {
+		ExListas exListas = new ExListas();
+		List<Integer> numeros = exListas.meusNumeros();
+		List<Integer> numerosPares = exListas.removeNumerosImpares(numeros);
+		Assert.assertEquals(2, numerosPares.size());
+		Assert.assertTrue(numerosPares.contains(2));
+		Assert.assertTrue(numerosPares.contains(4));
+	}
+	
+	
 }
 	
 	

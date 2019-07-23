@@ -34,8 +34,7 @@ public class ExListas {
 	
 	
 	// Método que apresente os nomes das cores do exercicio 1 ordenados.
-	public List<String> ordenaArrayList() {
-		List<String> cores = minhasCores();
+	public List<String> ordenaArrayList(List<String> cores) {
 		Collections.sort(cores);
 		return cores;
 	}
@@ -52,8 +51,7 @@ public class ExListas {
 	
 	
 	// Método que recebido uma lista de String, retorne ordenado de forma decrescente
-	public List<String> inverteArrayList() {
-		List<String> cores = minhasCores();
+	public List<String> inverteArrayList(List<String> cores) {
 		Collections.sort(cores);	// primeiro ordena
 		Collections.reverse(cores);	// depois inverte a ordem
 		return cores;
@@ -62,6 +60,23 @@ public class ExListas {
 	
 	// Método que receba uma lista de números inteiros e retorne uma lista de lista, 
 	// contendo em uma das listas os números pares e em outra lista o números ímpares
+	public List<List<Integer>> separaParesImpares(List<Integer> numeros) {
+		List<Integer> pares = new ArrayList<Integer>();	// cria uma lista para inserir numeros pares
+		List<Integer> impares = new ArrayList<Integer>();	// cria uma lista para inserir numeros impares
+		List<List<Integer>> listaNumeros = new ArrayList<>();
+		for (int i : numeros) {
+            if (i % 2 == 0) { pares.add(i); }
+            else {
+            	impares.add(i);
+            }
+        }
+		
+		listaNumeros.add(pares);		// index 0
+		listaNumeros.add(impares);		// index 1
+		
+		return listaNumeros;
+		
+	}
 	
 	// Método que receba a seguinte quantidade de dados e exiba os nomes distintos pelo primeiro caracter e ordenados
 	
@@ -90,15 +105,60 @@ public class ExListas {
 	
 	
 	// Método que receba uma lista de double e retorne a média.
+			// criação da lista de números double:
+	public List<Double> meusNumerosDouble() {
+		List<Double> listaNumDouble = new ArrayList<Double>();
+		listaNumDouble.add(2.5);
+		listaNumDouble.add(3.5);
+		listaNumDouble.add(3.1);
+		return listaNumDouble;
+	}
+			// criação do método 
+	public double somaListaDouble(List<Double> numeros) {
+		double soma = 0;
+		for(int i = 0; i < numeros.size(); i++)
+		    soma = soma + numeros.get(i);
+		return soma;
+	}
+	
 	
 	// Método que receba uma lista de Integer e devolva o menor valor.
+	public int retornaMenorValorEmUmaLista(List<Integer> numeros) {
+		int menor = Collections.min(numeros);
+		return menor;
+	}
 	
 	// Método que receba uma lista de Integer e devolva o maior valor.
+	public int retornaMaiorValorEmUmaLista(List<Integer> numeros) {
+		int maior = Collections.max(numeros);
+		return maior;
+	}
 	
 	// Método que receba uma lista de Integer e remova todos os ímpares.
+	public List<Integer> removeNumerosImpares(List<Integer> numeros) {
+		List<Integer> remover = new ArrayList<Integer>();	// cria uma lista para inserir numeros a remover
+		for (int i : numeros) {
+            if (i % 2 != 0) { remover.add(i); }
+        }
+
+        numeros.removeAll(remover);	// remove da lista <numeros> todos os numeros inclusos na lista <remover>
+        return numeros;
+	}
 	
-	// Método que receba uma frase e retorne todas as vogais.
-	
+	// Método que receba uma frase e retorne uma lista com todas as vogais.
+	/* public List<String> guardaVogais(String frase) {
+		List<String> vogais = new ArrayList<String>();
+		for (int i = 0; i < frase.length(); i++) {
+	        if((frase.charAt(i) == 'a') ||
+	            (frase.charAt(i) == 'e') ||
+	            (frase.charAt(i) == 'i') ||
+	            (frase.charAt(i) == 'o') ||
+	            (frase.charAt(i) == 'u')) {
+	            vogais.addAll(frase.charAt(i), vogais);
+	        }
+	    }
+	    return vogais;
+	} */
 	
 	
 }
