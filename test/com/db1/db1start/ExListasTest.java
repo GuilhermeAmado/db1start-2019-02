@@ -67,7 +67,15 @@ public class ExListasTest {
 	
 	@Test // teste da lista dentro da lista
 	public void deveRetornarListaDentroLista() {
-		
+		ExListas exListas = new ExListas();
+		List<Integer> numeros = exListas.meusNumeros();
+		List<List<Integer>> listaNum = exListas.separaParesImpares(numeros);
+		Assert.assertTrue(listaNum.get(0).contains(2));
+		Assert.assertTrue(listaNum.get(0).contains(4));
+		Assert.assertTrue(listaNum.get(1).contains(5));
+		Assert.assertTrue(listaNum.get(1).contains(3));
+		Assert.assertTrue(listaNum.get(1).contains(1));
+				
 	}
 	
 	@Test

@@ -6,7 +6,7 @@ import java.util.Collections;
 public class ExListas {
 	
 	
-	// Método que retorne o nome das cores que você mais gosta.
+	// 1 - Método que retorne o nome das cores que você mais gosta.
 	public List<String> minhasCores() {
 		List<String> cores = new ArrayList<String>(); 
 		cores.add("Verde");
@@ -15,14 +15,14 @@ public class ExListas {
 		return(cores);
 	}
 	
-	// Método que passado uma lista retorne a quantidade de itens.
+	// 2 - Método que passado uma lista retorne a quantidade de itens.
 	public int contaArray(List<String> lista) {
 		int tamanhoLista = lista.size();
 		return tamanhoLista;
 	}
 
 	
-	// Método que receba 3 Strings adicione a uma lista e remova o valor da segunda posição.
+	// 3 - Método que receba 3 Strings adicione a uma lista e remova o valor da segunda posição.
 	public List<String> addListArray(String item1, String item2, String item3) {
 		List<String> itens = new ArrayList<String>();
 		itens.add(item1);
@@ -33,14 +33,14 @@ public class ExListas {
 	}
 	
 	
-	// Método que apresente os nomes das cores do exercicio 1 ordenados.
+	// 4 - Método que apresente os nomes das cores do exercicio 1 ordenados.
 	public List<String> ordenaArrayList(List<String> cores) {
 		Collections.sort(cores);
 		return cores;
 	}
 	
 	
-	// Método que receba uma lista com as cores que você mais gosta e 
+	// 5 - Método que receba uma lista com as cores que você mais gosta e 
 	// um atributo que receba uma cor a ser removida.
 	
 	public List<String> recebeListaDeletaItem(List<String> lista, String deleta) {
@@ -50,7 +50,7 @@ public class ExListas {
 	
 	
 	
-	// Método que recebido uma lista de String, retorne ordenado de forma decrescente
+	// 6 - Método que recebido uma lista de String, retorne ordenado de forma decrescente
 	public List<String> inverteArrayList(List<String> cores) {
 		Collections.sort(cores);	// primeiro ordena
 		Collections.reverse(cores);	// depois inverte a ordem
@@ -58,7 +58,7 @@ public class ExListas {
 	}
 	
 	
-	// Método que receba uma lista de números inteiros e retorne uma lista de lista, 
+	// 7 - Método que receba uma lista de números inteiros e retorne uma lista de lista, 
 	// contendo em uma das listas os números pares e em outra lista o números ímpares
 	public List<List<Integer>> separaParesImpares(List<Integer> numeros) {
 		List<Integer> pares = new ArrayList<Integer>();	// cria uma lista para inserir numeros pares
@@ -78,11 +78,43 @@ public class ExListas {
 		
 	}
 	
-	// Método que receba a seguinte quantidade de dados e exiba os nomes distintos pelo primeiro caracter e ordenados
+	
+	// 8 - Método que receba a seguinte quantidade de dados e exiba os nomes distintos pelo primeiro caracter e ordenados
+			// criação da lista de pessoas:
+	public List<String> listaNomes() {
+		List<String> nomes = new ArrayList<String>();
+		nomes.add("ANA");
+		nomes.add("ANA LAURA");
+		nomes.add("JOSE");
+		nomes.add("WAGNER");
+		nomes.add("RODOLFO");
+		nomes.add("ROBERVAL");
+		nomes.add("RODOLPHO");
+		nomes.add("VAGNER");
+		nomes.add("JOSÉ");
+		nomes.add("JOALDO");
+		nomes.add("CLECIO");
+		nomes.add("JOSÉ");
+		nomes.add("MARIA");
+		nomes.add("MARCOS");
+		
+		return nomes;
+	}
+	
+			// criação do método (lista de lista)
+	public List<List<String>> distingueOrdenaNomes(List<String> listaNomes) {
+		Collections.sort(listaNomes);
+		for (String nome : listaNomes)
+	    {
+	       if (nome.charAt(0) == 'A') {
+	    	   
+	       }
+	    		   
+	    }
+	}
 	
 	
-	
-	// Método que receba uma lista de Integer e retorna a soma.
+	// 9 - Método que receba uma lista de Integer e retorna a soma.
 			// criação da lista de números:
 	public List<Integer> meusNumeros() {
 		List<Integer> listaNum = new ArrayList<Integer>();
@@ -104,7 +136,7 @@ public class ExListas {
 	
 	
 	
-	// Método que receba uma lista de double e retorne a média.
+	// 10 - Método que receba uma lista de double e retorne a média.
 			// criação da lista de números double:
 	public List<Double> meusNumerosDouble() {
 		List<Double> listaNumDouble = new ArrayList<Double>();
@@ -122,19 +154,19 @@ public class ExListas {
 	}
 	
 	
-	// Método que receba uma lista de Integer e devolva o menor valor.
+	// 11 - Método que receba uma lista de Integer e devolva o menor valor.
 	public int retornaMenorValorEmUmaLista(List<Integer> numeros) {
 		int menor = Collections.min(numeros);
 		return menor;
 	}
 	
-	// Método que receba uma lista de Integer e devolva o maior valor.
+	// 12 - Método que receba uma lista de Integer e devolva o maior valor.
 	public int retornaMaiorValorEmUmaLista(List<Integer> numeros) {
 		int maior = Collections.max(numeros);
 		return maior;
 	}
 	
-	// Método que receba uma lista de Integer e remova todos os ímpares.
+	// 13 - Método que receba uma lista de Integer e remova todos os ímpares.
 	public List<Integer> removeNumerosImpares(List<Integer> numeros) {
 		List<Integer> remover = new ArrayList<Integer>();	// cria uma lista para inserir numeros a remover
 		for (int i : numeros) {
@@ -145,7 +177,7 @@ public class ExListas {
         return numeros;
 	}
 	
-	// Método que receba uma frase e retorne uma lista com todas as vogais.
+	// 14 - Método que receba uma frase e retorne uma lista com todas as vogais.
 	/* public List<String> guardaVogais(String frase) {
 		List<String> vogais = new ArrayList<String>();
 		for (int i = 0; i < frase.length(); i++) {
