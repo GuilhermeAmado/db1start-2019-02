@@ -66,10 +66,11 @@ public class ExListas {
 		List<Integer> impares = new ArrayList<Integer>();	// cria uma lista para inserir numeros impares
 		List<List<Integer>> listaNumeros = new ArrayList<>();
 		for (int i : numeros) {
-            if (i % 2 == 0) { pares.add(i); }
-            else {
-            	impares.add(i);
-            }
+			if (i % 2 == 0) {
+				pares.add(i); 
+			} else { 
+				impares.add(i); 
+			}
         }
 		
 		listaNumeros.add(pares);		// index 0
