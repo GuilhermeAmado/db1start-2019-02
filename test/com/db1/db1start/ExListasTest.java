@@ -78,6 +78,18 @@ public class ExListasTest {
 				
 	}
 	
+	@Test // teste EXERCICIO 8 (lista dentro da lista nomes separados)
+	public void deveSepararNomesEmListas() {
+		ExListas exListas = new ExListas();
+		List<String> nomes = exListas.listaNomes();
+		List<List<String>> listaNomesSeparados = exListas.distingueOrdenaNomes(nomes);
+		Assert.assertTrue(listaNomesSeparados.get(0).contains("ANA"));
+		Assert.assertTrue(listaNomesSeparados.get(0).contains("ANA LAURA"));
+		Assert.assertTrue(listaNomesSeparados.get(1).contains("ROBERVAL"));
+		Assert.assertTrue(listaNomesSeparados.get(1).contains("RODOLFO"));
+		Assert.assertTrue(listaNomesSeparados.get(1).contains("RODOLPHO"));
+	}
+	
 	@Test
 	public void deveSomarNumerosEmUmaLista() {
 		ExListas exListas = new ExListas();
@@ -87,11 +99,11 @@ public class ExListasTest {
 	}
 	
 	@Test
-	public void deveSomarNumerosEmUmaListaDouble() {
+	public void deveRetornarMediaDeUmaListaDouble() {
 		ExListas exListas = new ExListas();
 		List<Double> listaNumDouble = exListas.meusNumerosDouble();
-		Double somaDouble = exListas.somaListaDouble(listaNumDouble);
-		Assert.assertEquals(9.1, somaDouble, 0.001);
+		Double somaDouble = exListas.mediaListaDouble(listaNumDouble);
+		Assert.assertEquals(3.0333, somaDouble, 0.001);
 	}
 	
 	@Test
@@ -120,6 +132,14 @@ public class ExListasTest {
 		Assert.assertTrue(numerosPares.contains(4));
 	}
 	
+	@Test
+	public void deveRetornarVogaisUsadas() {
+		ExListas exListas = new ExListas();
+		List<String> vogaisUsadas = exListas.guardaVogais("Porta");
+		Assert.assertEquals(2, vogaisUsadas.size());
+		Assert.assertTrue(vogaisUsadas.contains("a"));
+		Assert.assertTrue(vogaisUsadas.contains("o"));
+	}
 	
 }
 	

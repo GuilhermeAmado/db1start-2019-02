@@ -64,6 +64,15 @@ public class App {
 		} else {
 			System.out.println("Lista com valores: " + pessoas.size());
 		}
+		
+		
+		//teste
+		ExListas exListas = new ExListas();
+		List<String> lnomes = exListas.listaNomes();
+		List<List<String>> ordena = exListas.distingueOrdenaNomes(lnomes);
+		System.out.println(ordena);
+		
+		
 	} 
 
 }

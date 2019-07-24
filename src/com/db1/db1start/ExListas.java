@@ -2,6 +2,7 @@ package com.db1.db1start;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class ExListas {
 	
@@ -104,14 +105,9 @@ public class ExListas {
 			// criação do método (lista de lista)
 	public List<List<String>> distingueOrdenaNomes(List<String> listaNomes) {
 		Collections.sort(listaNomes);
-		for (String nome : listaNomes)
-	    {
-	       if (nome.charAt(0) == 'A') {
-	    	   
-	       }
-	    		   
-	    }
+		return new ArrayList<>(listaNomes.stream().collect(Collectors.groupingBy(nome -> nome.charAt(0))).values());
 	}
+		
 	
 	
 	// 9 - Método que receba uma lista de Integer e retorna a soma.
@@ -146,11 +142,11 @@ public class ExListas {
 		return listaNumDouble;
 	}
 			// criação do método 
-	public double somaListaDouble(List<Double> numeros) {
+	public double mediaListaDouble(List<Double> numeros) {
 		double soma = 0;
 		for(int i = 0; i < numeros.size(); i++)
 		    soma = soma + numeros.get(i);
-		return soma;
+		return soma/numeros.size();
 	}
 	
 	
@@ -178,19 +174,23 @@ public class ExListas {
 	}
 	
 	// 14 - Método que receba uma frase e retorne uma lista com todas as vogais.
-	/* public List<String> guardaVogais(String frase) {
+	public List<String> guardaVogais(String frase) {
 		List<String> vogais = new ArrayList<String>();
-		for (int i = 0; i < frase.length(); i++) {
-	        if((frase.charAt(i) == 'a') ||
-	            (frase.charAt(i) == 'e') ||
-	            (frase.charAt(i) == 'i') ||
-	            (frase.charAt(i) == 'o') ||
-	            (frase.charAt(i) == 'u')) {
-	            vogais.addAll(frase.charAt(i), vogais);
+		for (char ch : frase.toLowerCase().toCharArray()) {
+	        if (ch == 'a') {
+	        	vogais.add("a");
+	        } else if (ch == 'e') {
+	        	vogais.add("e");
+	        } else if (ch == 'i') {
+	        	vogais.add("i");
+	        } else if (ch == 'o') {
+	        	vogais.add("o");
+	        } else if (ch == 'u') {
+	        	vogais.add("u");
 	        }
 	    }
 	    return vogais;
-	} */
+	} 
 	
 	
 }
